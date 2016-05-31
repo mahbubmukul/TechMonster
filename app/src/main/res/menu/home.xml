@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="200"
+        android:title="Chat"
+        android:icon="@mipmap/chat"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_noti"
+        android:orderInCategory="100"
+        android:title="Notification"
+        android:icon="@mipmap/noti"
+        app:showAsAction="always"/>
+
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_edit_prof"
+            android:icon="@mipmap/edit_profile"
+            android:title="Edit your profile" />
+        <item
+            android:id="@+id/nav_change_pass"
+            android:icon="@mipmap/pass_change"
+            android:title="Change password" />
+        <item
+            android:id="@+id/nav_saved_job"
+            android:icon="@mipmap/saved_job"
+            android:title="Saved jobs" />
+        <item
+            android:id="@+id/nav_applied"
+            android:icon="@mipmap/applied"
+            android:title="Applied jobs" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@mipmap/sign_out"
+            android:title="Signout" />
+    </group>
+
+</menu>
