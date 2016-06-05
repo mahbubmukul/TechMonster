@@ -9,4 +9,10 @@
 
     <string name="action_chat">&#xf075;</string>
     <string name="title_activity_change_password">ChangePasswordActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_apply_job">ApplyJobActivity</string>
+    <string name="title_activity_reset_link">ResetLinkActivity</string>
+    <string name="title_activity_pass_reset_link">PassResetLinkActivity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 </resources>

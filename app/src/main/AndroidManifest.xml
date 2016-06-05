@@ -28,6 +28,40 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bitmakers.techmonster.HomeActivity" />
         </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bitmakers.techmonster.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ApplyJobActivity"
+            android:label="@string/title_activity_apply_job"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bitmakers.techmonster.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".PassResetLinkActivity"
+            android:label="@string/title_activity_pass_reset_link"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bitmakers.techmonster.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".SignInActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -14,10 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.bitmakers.techmonster.adapter_pkg.HomePageAdapter;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +46,17 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+
 //        Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
 //
 //        TextView fontAwesomeAndroidIcon = (TextView) findViewById(R.id.test);
 //
 //        fontAwesomeAndroidIcon.setTypeface(fontAwesomeFont);
+
+
+        ListView lv = (ListView) findViewById(R.id.listView);
+        HomePageAdapter ad = new HomePageAdapter(this);
+        lv.setAdapter(ad);
     }
 
     @Override
@@ -60,6 +73,7 @@ public class HomeActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+        this.menu=menu;
         return true;
     }
 
@@ -85,9 +99,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_edit_prof) {
-            // Handle the camera action
+            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
         } else if (id == R.id.nav_change_pass) {
-            startActivity(new Intent(HomeActivity.this, ChangePasswordActivity.class));
+            startActivity(new Intent(HomeActivity.this, ApplyJobActivity.class));
 
         } else if (id == R.id.nav_saved_job) {
 
