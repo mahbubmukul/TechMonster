@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.bitmakers.techmonster.JobDetailsActivity"
+    tools:showIn="@layout/activity_job_details">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/apply_btn"
+        android:layout_marginBottom="15dp">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+    
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@mipmap/post_photo"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+    
+                <TextView
+                    android:id="@+id/job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Senior Frontend Developer"
+                    android:layout_centerVertical="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
+    
+                <TextView
+                    android:id="@+id/job_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INNOVISION"
+                    android:textSize="15sp"
+                    android:drawableLeft="@mipmap/home_left"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorPrimary"/>
+    
+                <TextView
+                    android:id="@+id/job_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="District 1, HCMC"
+                    android:textSize="15sp"
+                    android:drawableLeft="@mipmap/loc_left"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#444444"/>
+    
+                <TextView
+                    android:id="@+id/job_sign_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In to view"
+                    android:textSize="15sp"
+                    android:drawableLeft="@mipmap/doller_left"
+                    android:gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/job_expie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expiration Date: 15/06/2016"
+                    android:textSize="15sp"
+                    android:drawableLeft="@mipmap/expire_avat"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#444444"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/tags">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/round_edit_box"
+                    android:text="     PHP     "
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/round_edit_box"
+                    android:text="     HTML     "
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/round_edit_box"
+                android:text="     JAVA     "
+                android:gravity="center"
+                android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/round_edit_box"
+                    android:text="     WEB DESIGN     "
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/fb_blue_btn"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:id="@+id/fb_btn">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/fb"
+                    android:background="@android:color/transparent"
+                    android:text="Cheer this Job"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textColor="@android:color/white"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/yellow_btn"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/save_job_btn">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/favorite_avat"
+                    android:background="@android:color/transparent"
+                    android:text="Save Job"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textColor="#4B4B4B"/>
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#AAAAAA"
+                    android:layout_alignParentBottom="true">
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:id="@+id/job_info"
+                        android:text="Job Information"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@+id/job_info">
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/desv_rl"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="15dp"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/dummy_color"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description: "
+                        android:layout_toRightOf="@+id/dummy_color"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:text="test"
+                    android:id="@+id/desc_string"/>
+            </LinearLayout>
+    
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:layout_weight="1"
+        android:id="@+id/apply_btn"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/tic"
+            android:background="@android:color/transparent"
+            android:text="APPLY"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/white"/>
+
+    </FrameLayout>
+
+
+
+
+</RelativeLayout>

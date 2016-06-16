@@ -15,4 +15,33 @@
     <string name="title_activity_pass_reset_link">PassResetLinkActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
+    <string name="title_activity_chat_list">ChatListActivity</string>
+    <string name="title_activity_notification_list">NotificationListActivity</string>
+    <string name="title_activity_job_details">JobDetailsActivity</string>
+    <string name="title_activity_companydetails">CompanydetailsActivity</string>
+    <string name="title_activity_saved_job">SavedJobActivity</string>
+    <string name="title_activity_applied_job">AppliedJobActivity</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions." </string>
+
+    <string name="facebook_app_id">1146865025364400</string>
+
+
+    <string name="desc">    <p>We are looking for 10 PHP Developers (for both senior and junior position), who is expected to be able to perform all aspects of the development and release cycle, including front-end, back-end, database and system development. You must be able to work well independently or within a small team. Main duties:</p>
+                                <ul>
+                                    <li>Understand and translate business requirements into advanced technical solutions.</li>
+                                    <li>Provide work estimation in points or hours - Participate in designing, developing and implementing project.</li>
+                                    <li>Implement web applications in using modern php web frameworks &amp; cms framework</li>
+                                    <li>Report on progress and time spent</li>
+                                    <li>Prepare technical documentation if required.</li>
+                                </ul>
+                                <p>Tech is a young startup focusing on web development with emerging technologies, providing a lot of opportunities to learn new things. We aim for a friendly and flexible working environment, which could best assist developers to work effectively. Other than that, staff are offered with many benefits: </p>
+                            </string>
 </resources>
