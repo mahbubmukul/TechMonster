@@ -133,8 +133,7 @@ public class JobDetailsList {
         return applicant_job_status;
     }
 
-    public void setApplicant_job_status (String applicant_job_status)
-    {
+    public void setApplicant_job_status (String applicant_job_status)    {
         this.applicant_job_status = applicant_job_status;
     }
 
@@ -183,8 +182,7 @@ public class JobDetailsList {
         return applicant_company_status;
     }
 
-    public void setApplicant_company_status (String applicant_company_status)
-    {
+    public void setApplicant_company_status (String applicant_company_status)    {
         this.applicant_company_status = applicant_company_status;
     }
 
@@ -233,8 +231,7 @@ public class JobDetailsList {
         return job_cover_image;
     }
 
-    public void setJob_cover_image (String job_cover_image)
-    {
+    public void setJob_cover_image (String job_cover_image)    {
         this.job_cover_image = job_cover_image;
     }
 

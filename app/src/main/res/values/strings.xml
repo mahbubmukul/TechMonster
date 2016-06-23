@@ -44,4 +44,5 @@
                                 </ul>
                                 <p>Tech is a young startup focusing on web development with emerging technologies, providing a lot of opportunities to learn new things. We aim for a friendly and flexible working environment, which could best assist developers to work effectively. Other than that, staff are offered with many benefits: </p>
                             </string>
+    <string name="title_activity_test">TestActivity</string>
 </resources>

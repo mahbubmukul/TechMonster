@@ -13,7 +13,7 @@ public class AppUrl {
     public static String sign_in = base_Url+"access_key=90AMUJHalcpJcR0CohSNTXDirqX&scope=oauth&func=login";
     public static String sign_up = base_Url+"access_key=90AMUJHalcpJcR0CohSNTXDirqX&scope=oauth&func=register";
 
-    public static String dtailsJob = base_Url+"access_key=90AMUJHalcpJcR0CohSNTXDirqX&scope=oauth&func=get_job_detail";
+    public static String dtailsJob = base_Url+"access_key=90AMUJHalcpJcR0CohSNTXDirqX&scope=applicant&func=get_job_detail";
 
 
 

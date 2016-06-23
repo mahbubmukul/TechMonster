@@ -106,7 +106,8 @@ public class HomeActivity extends AppCompatActivity
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(HomeActivity.this, JobDetailsActivity.class));
+
+                getDetailsWeb(AppData.homeJobList.get(position).getId(), "", true);
             }
         });
 
@@ -284,9 +285,11 @@ public class HomeActivity extends AppCompatActivity
                 @Override
                 protected Void doInBackground(Void... params) {
                     try {
-                        AppData.finalResultFromServer = new JSONParser().thePostRequest(
+                        AppData.finalDeatilsResultFromServer = new JSONParser().thePostRequest(
                                 AppUrl.dtailsJob+"&id_job="+jobId+"&token="+token, "");
-                        AppData.homeJobList= new JSON().parseHomeNews(AppData.finalResultFromServer);
+                        AppData.jobDetailsLists= new JSON().parseDetailsNews(AppData.finalDeatilsResultFromServer );
+
+                        System.out.println("WWWWWW >>>"+AppData.jobDetailsLists.get(0).getCompany_info().getCom_name());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -311,8 +314,8 @@ public class HomeActivity extends AppCompatActivity
                         progressDialog.dismiss();
                     }
 
-                    ad = new HomePageAdapter(HomeActivity.this, AppData.homeJobList);
-                    lv.setAdapter(ad);
+                   // startActivity(new );
+                    startActivity(new Intent(HomeActivity.this, JobDetailsActivity.class));
 
                     super.onPostExecute(aVoid);
                 }

@@ -28,6 +28,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:id="@+id/cover_img"
                     android:src="@mipmap/post_photo"
                     android:scaleType="centerCrop"/>
             </FrameLayout>
@@ -65,7 +66,6 @@
                     android:text="District 1, HCMC"
                     android:textSize="15sp"
                     android:drawableLeft="@mipmap/loc_left"
-                    android:gravity="center"
                     android:layout_marginTop="8dp"
                     android:textColor="#444444"/>
     
@@ -97,41 +97,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:id="@+id/tags">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:background="@drawable/round_edit_box"
-                    android:text="     PHP     "
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:background="@drawable/round_edit_box"
-                    android:text="     HTML     "
-                    android:gravity="center"
-                    android:layout_marginLeft="5dp"/>
-
-                <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:background="@drawable/round_edit_box"
-                android:text="     JAVA     "
-                android:gravity="center"
-                android:layout_marginLeft="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:background="@drawable/round_edit_box"
-                    android:text="     WEB DESIGN     "
-                    android:gravity="center"
-                    android:layout_marginLeft="5dp"/>
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:id="@+id/tags"
+                android:orientation="horizontal">
             </LinearLayout>
 
             <FrameLayout
@@ -235,19 +208,58 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Description: "
+                        android:text="Job Description"
                         android:layout_toRightOf="@+id/dummy_color"
                         android:layout_marginLeft="10dp"
                         android:textSize="17dp"
                         android:textStyle="bold"/>
                 </RelativeLayout>
-                
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:text="test"
-                    android:id="@+id/desc_string"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/desc_text_area"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/require_rl"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="15dp"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/dummy_color1"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Requirements"
+                        android:layout_toRightOf="@+id/dummy_color1"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/req_text_area"
+                    android:orientation="vertical">
+
+                </LinearLayout>
             </LinearLayout>
     
         </LinearLayout>

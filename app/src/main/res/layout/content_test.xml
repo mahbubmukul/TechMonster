@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.bitmakers.techmonster.TestActivity"
+    tools:showIn="@layout/activity_test">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!--<FrameLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:id="@+id/cover_img"-->
+                        <!--android:src="@mipmap/post_photo"-->
+                        <!--android:scaleType="centerCrop"/>-->
+
+
+
+                    <!--<android.support.design.widget.FloatingActionButton-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--app:layout_anchor="@id/cover_img"-->
+                        <!--app:layout_anchorGravity="bottom|right|end"-->
+                        <!--android:src="@mipmap/icon"-->
+                        <!--android:layout_margin="@dimen/fab_margin"-->
+                        <!--android:clickable="true"/>-->
+                <!--</FrameLayout>-->
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/company_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Senior Frontend Developer"
+                        android:layout_centerVertical="true"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:id="@+id/company_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="District 1, HCMC"
+                        android:textSize="15sp"
+                        android:drawableLeft="@mipmap/loc_left"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#444444"/>
+
+                    <TextView
+                        android:id="@+id/company_web"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign In to view"
+                        android:textSize="15sp"
+                        android:drawableLeft="@mipmap/web"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <TextView
+                        android:id="@+id/company_employee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Expiration Date: 15/06/2016"
+                        android:textSize="15sp"
+                        android:drawableLeft="@mipmap/group"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#444444"/>
+
+                    <TextView
+                        android:id="@+id/company_country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Expiration Date: 15/06/2016"
+                        android:textSize="15sp"
+                        android:drawableLeft="@mipmap/flag"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#444444"/>
+
+                    <TextView
+                        android:id="@+id/company_fb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign In to view"
+                        android:textSize="15sp"
+                        android:drawableLeft="@mipmap/fb_avat"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorPrimary"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="start"
+                    android:layout_gravity="start"
+                    android:id="@+id/tags"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/fb_blue_btn"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:id="@+id/fb_btn">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/fb"
+                        android:background="@android:color/transparent"
+                        android:text="Cheer this company"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/white"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/yellow_btn"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/save_company_btn">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/favorite_avat"
+                        android:background="@android:color/transparent"
+                        android:text="Save company"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="#4B4B4B"/>
+
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#AAAAAA"
+                        android:layout_alignParentBottom="true">
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:id="@+id/company_info"
+                            android:text="company Information"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:background="@color/colorPrimary"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignRight="@+id/company_info">
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/desv_rl"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="15dp"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/dummy_color"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="company Description"
+                            android:layout_toRightOf="@+id/dummy_color"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="17dp"
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/desc_text_area"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/require_rl"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="15dp"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/dummy_color1"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Requirements"
+                            android:layout_toRightOf="@+id/dummy_color1"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="17dp"
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/req_text_area"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
