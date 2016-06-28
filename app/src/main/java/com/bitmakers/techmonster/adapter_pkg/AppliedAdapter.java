@@ -40,7 +40,7 @@ public class AppliedAdapter extends BaseAdapter {
 	public int getCount() {
 		// TODO Auto-generated method stub
 //		return i.size();
-		return 10;
+		return 0;
 	}
 
 	@Override

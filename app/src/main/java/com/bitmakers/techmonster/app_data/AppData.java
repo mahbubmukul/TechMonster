@@ -2,6 +2,7 @@ package com.bitmakers.techmonster.app_data;
 
 import com.bitmakers.techmonster.model_class.CityList;
 import com.bitmakers.techmonster.model_class.JobDetailsList;
+import com.bitmakers.techmonster.model_class.JobFavouriteList;
 import com.bitmakers.techmonster.model_class.JobList;
 
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ public class AppData {
 	public static ArrayList<CityList> cityLists = new ArrayList<CityList>();
 
 	public static ArrayList<JobDetailsList> jobDetailsLists = new ArrayList<JobDetailsList>();
+
+	public static ArrayList<JobFavouriteList> newsFavListt = new ArrayList<JobFavouriteList>();
 
 
 

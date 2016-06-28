@@ -3,12 +3,8 @@ package com.bitmakers.techmonster;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.Html;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -19,14 +15,13 @@ import android.widget.TextView;
 import com.bitmakers.techmonster.app_data.AppData;
 import com.bitmakers.techmonster.database.DBActions;
 import com.bitmakers.techmonster.model_class.JobDetailsList;
+import com.bitmakers.techmonster.model_class.JobFavouriteList;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
-import org.xml.sax.XMLReader;
-
-public class JobDetailsActivity extends AppCompatActivity {
+public class SavedJobDetailsActivity extends AppCompatActivity {
 
     ImageView coverImg;
     TextView jobTitle,jobCompany, jobLocation, jobSalary,jobExpire;
@@ -65,7 +60,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         ((FrameLayout)findViewById(R.id.apply_btn)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(JobDetailsActivity.this, ApplyJobActivity.class));
+                startActivity(new Intent(SavedJobDetailsActivity.this, ApplyJobActivity.class));
             }
         });
 
@@ -77,7 +72,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         jobCompany.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(JobDetailsActivity.this, CompanydetailsActivity.class));
+                startActivity(new Intent(SavedJobDetailsActivity.this, CompanydetailsActivity.class));
             }
         });
 
@@ -108,48 +103,48 @@ public class JobDetailsActivity extends AppCompatActivity {
     }
 
     void updateData(){
-        JobDetailsList jobDet =AppData.jobDetailsLists.get(0);
+        JobFavouriteList jobDet =AppData.newsFavListt.get(0);
 
         jobTitle.setText(jobDet.getName());
-        jobCompany.setText(jobDet.getCompany_info().getCom_name());
-        jobLocation.setText(jobDet.getCompany_info().getFormatted_address());
+//        jobCompany.setText(jobDet.getCompany_info().getCom_name());
+//        jobLocation.setText(jobDet.getCompany_info().getFormatted_address());
         jobSalary.setText(jobDet.getSalary());
         jobExpire.setText(jobDet.getExpire_time());
 
-        for (int j = 0; j < jobDet.getKeywords().length; j++) {
+//        for (int j = 0; j < jobDet.getKeywords().length; j++) {
+//
+//            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.tag_lay, null);
+//
+//            TextView label_date = (TextView) tr_head.findViewById(R.id.tag_name);
+//            label_date.setText(jobDet.getKeywords()[j]);
+//
+//            keywordL.addView(tr_head, new RelativeLayout.LayoutParams(
+//                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                    RelativeLayout.LayoutParams.WRAP_CONTENT));
+//
+//        }
 
-            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.tag_lay, null);
-
-            TextView label_date = (TextView) tr_head.findViewById(R.id.tag_name);
-            label_date.setText(jobDet.getKeywords()[j]);
-
-            keywordL.addView(tr_head, new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.WRAP_CONTENT,
-                    RelativeLayout.LayoutParams.WRAP_CONTENT));
-
-        }
-
-        for (int j = 0; j < jobDet.getJob_skill().length; j++) {
-
-            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.desc_text, null);
-
-            TextView label_date = (TextView) tr_head.findViewById(R.id.desc_text);
-            label_date.setText(jobDet.getJob_skill()[j]);
-
-            descTextL.addView(tr_head);
-
-        }
-
-        for (int j = 0; j < jobDet.getJob_exp().length; j++) {
-
-            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.desc_text, null);
-
-            TextView label_date = (TextView) tr_head.findViewById(R.id.desc_text);
-            label_date.setText(jobDet.getJob_exp()[j]);
-
-            reqTextL.addView(tr_head);
-
-        }
+//        for (int j = 0; j < jobDet.getJob_skill().length; j++) {
+//
+//            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.desc_text, null);
+//
+//            TextView label_date = (TextView) tr_head.findViewById(R.id.desc_text);
+//            label_date.setText(jobDet.getJob_skill()[j]);
+//
+//            descTextL.addView(tr_head);
+//
+//        }
+//
+//        for (int j = 0; j < jobDet.getJob_exp().length; j++) {
+//
+//            RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.desc_text, null);
+//
+//            TextView label_date = (TextView) tr_head.findViewById(R.id.desc_text);
+//            label_date.setText(jobDet.getJob_exp()[j]);
+//
+//            reqTextL.addView(tr_head);
+//
+//        }
 
         ImageLoader.getInstance().displayImage(jobDet.getJob_cover_image(), coverImg, options, new ImageLoadingListener() {
             @Override

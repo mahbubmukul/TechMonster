@@ -53,6 +53,8 @@ public class HomeActivity extends AppCompatActivity
     public static DisplayImageOptions options;
     SharedPreferences pref;
 
+    String token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,7 @@ public class HomeActivity extends AppCompatActivity
         signIn = pref.getBoolean("Loged_in", false);
         String name = pref.getString("user_name", null);
         String imag = pref.getString("user_avatar", null);
+       token = pref.getString("user_token", null);
 
         System.out.println("WWWWWWWWW  HHHHHH  "+signIn.toString()+" "+name+"  "+imag);
 
@@ -107,12 +110,12 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                getDetailsWeb(AppData.homeJobList.get(position).getId(), "", true);
+                getDetailsWeb(AppData.homeJobList.get(position).getId(), token, true);
             }
         });
 
 
-        getLoadDataFromWeb(AppUrl.homJobUrl,"",true);
+        getLoadDataFromWeb(AppUrl.homJobUrl,"0",token,true);
 
 
     }
@@ -209,17 +212,17 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-    public void getLoadDataFromWeb(final String theUrl, final String thePostValue, final boolean showProgress) {
+    public void getLoadDataFromWeb(final String theUrl, final String pageNo, final String token, final boolean showProgress) {
 
         if (XInternetServices.isNetworkAvailable(HomeActivity.this)) {
             class  LoadHomeData extends AsyncTask<Void,Void,Void>{
                 ProgressDialog progressDialog;
-
+                //&page=0&token=5762323e6a49d00bd73de8bd"
                 @Override
                 protected Void doInBackground(Void... params) {
                     try {
                         AppData.finalResultFromServer = new JSONParser().thePostRequest(
-                                theUrl, thePostValue);
+                                theUrl+"&page="+pageNo+"&token="+token, "");
                         AppData.homeJobList= new JSON().parseHomeNews(AppData.finalResultFromServer);
                     } catch (Exception e) {
                         e.printStackTrace();

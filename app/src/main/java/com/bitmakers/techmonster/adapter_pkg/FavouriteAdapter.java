@@ -9,10 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.bitmakers.techmonster.R;
 import com.bitmakers.techmonster.app_data.AppData;
 import com.bitmakers.techmonster.model_class.DistList;
+import com.bitmakers.techmonster.model_class.JobFavouriteList;
 import com.bitmakers.techmonster.model_class.JobList;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -21,17 +21,17 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.ArrayList;
 
-public class HomePageAdapter extends BaseAdapter {
+public class FavouriteAdapter extends BaseAdapter {
 
 
 	//ArrayList<Match> i;
 	Context ctx;
-	ArrayList<JobList> data;
+	ArrayList<JobFavouriteList> data;
 	DisplayImageOptions options;
 
 
 
-	public HomePageAdapter(Context ctx, ArrayList<JobList> data)
+	public FavouriteAdapter(Context ctx, ArrayList<JobFavouriteList> data)
 	{
 		super();
 //		this.i = i;
@@ -86,13 +86,13 @@ public class HomePageAdapter extends BaseAdapter {
 		convertView= LayoutInflater.from(ctx).inflate(R.layout.job_item, parent, false);
 		
 		final ViewHolder Holder=new ViewHolder();
-		JobList mm = data.get(position);
+		JobFavouriteList mm = data.get(position);
 //
 //
 		Holder.job_title =(TextView) convertView.findViewById(R.id.job_title);
 		Holder.job_title.setText(mm.getName());
 		Holder.companyName =(TextView) convertView.findViewById(R.id.job_company);
-		Holder.companyName.setText(mm.getCompany_name());
+		//Holder.companyName.setText(mm.getCompany_name());
 		Holder.salary =(TextView) convertView.findViewById(R.id.job_sign_in);
 		Holder.salary.setText(mm.getSalary());
 
