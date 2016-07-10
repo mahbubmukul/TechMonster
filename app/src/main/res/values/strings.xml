@@ -45,4 +45,20 @@
                                 <p>Tech is a young startup focusing on web development with emerging technologies, providing a lot of opportunities to learn new things. We aim for a friendly and flexible working environment, which could best assist developers to work effectively. Other than that, staff are offered with many benefits: </p>
                             </string>
     <string name="title_activity_test">TestActivity</string>
+
+
+    <string-array name="arrays_place">
+        <item>মহানগর এলাকা </item>
+        <item>জেলা </item>
+        <item>বাংলাদেশের বাহিরে </item>
+    </string-array>
+
+    <string-array name="arrays_metro">
+        <item>ঢাকা মহানগর </item>
+        <item>চট্টগ্রাম মহানগর </item>
+        <item>রাজশাহী মহানগর </item>
+        <item>খুলনা মহানগর </item>
+        <item>সিলেট মহানগর </item>
+        <item>বরিশাল মহানগর </item>
+    </string-array>
 </resources>

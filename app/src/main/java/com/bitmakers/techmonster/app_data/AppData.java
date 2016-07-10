@@ -17,6 +17,8 @@ public class AppData {
 	public static ArrayList<JobDetailsList> jobDetailsLists = new ArrayList<JobDetailsList>();
 
 	public static ArrayList<JobFavouriteList> newsFavListt = new ArrayList<JobFavouriteList>();
+	public static ArrayList<String> newsKey = new ArrayList<String>();
+	public static ArrayList<JobList> searchJobList = new ArrayList<JobList>();
 
 
 

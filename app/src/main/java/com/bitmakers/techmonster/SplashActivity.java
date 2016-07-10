@@ -63,14 +63,17 @@ public class SplashActivity extends AppCompatActivity {
             class  LoadHomeData extends AsyncTask<Void,Void,Void> {
                 ProgressDialog progressDialog;
                 String cityJson=null;
-                String countryJson=null;
+                String keyJson=null;
 
                 @Override
                 protected Void doInBackground(Void... params) {
                     try {
                         cityJson = new JSONParser().thePostRequest(
                                 AppUrl.cityUrl, "");
+                        keyJson = new JSONParser().thePostRequest(
+                                AppUrl.keyUrl, "");
                         AppData.cityLists= new JSON().parseCity(cityJson);
+                        AppData.newsKey= new JSON().parseKey(keyJson);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

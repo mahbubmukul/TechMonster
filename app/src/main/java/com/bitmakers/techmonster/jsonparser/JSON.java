@@ -287,6 +287,32 @@ public class JSON {
         return  temp;
     }
 
+    public ArrayList<String> parseKey(String json){
+
+        ArrayList<String> temp = new ArrayList<String>();
+        try {
+            if(json.startsWith("Error"))
+                return null;
+
+            JSONObject jObj = new JSONObject(json);
+            JSONArray contacts = jObj.getJSONArray("list_keywords");
+
+            System.out.println("Fuchka :"+contacts.length());
+            for(int i = 0; i < contacts.length(); i++){
+                String jk = contacts.getString(i);
+
+                System.out.println("Fuchka :"+jk);
+
+                temp.add(jk);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return  temp;
+    }
+
     public String parseSignIn(String json, Context ctx){
 
         String status="";

@@ -36,4 +36,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.1.0'
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.google.android:flexbox:0.1.3'
 }

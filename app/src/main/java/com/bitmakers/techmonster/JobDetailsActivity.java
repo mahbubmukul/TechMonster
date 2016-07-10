@@ -1,7 +1,12 @@
 package com.bitmakers.techmonster;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,10 +20,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bitmakers.techmonster.app_data.AppData;
+import com.bitmakers.techmonster.app_data.AppUrl;
+import com.bitmakers.techmonster.app_data.XInternetServices;
 import com.bitmakers.techmonster.database.DBActions;
+import com.bitmakers.techmonster.jsonparser.JSON;
+import com.bitmakers.techmonster.jsonparser.JSONParser;
 import com.bitmakers.techmonster.model_class.JobDetailsList;
+import com.google.android.flexbox.FlexboxLayout;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -33,10 +44,16 @@ public class JobDetailsActivity extends AppCompatActivity {
     FrameLayout fbButton, saveJob;
     LinearLayout keywordL,descTextL, reqTextL;
 
+    FlexboxLayout fbl;
+
     DisplayImageOptions options;
 
     private boolean isFavourited = false;
     private DBActions dbActions;
+
+    String result;
+    SharedPreferences pref;
+    String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +66,10 @@ public class JobDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setLogo(R.mipmap.jobportal);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        pref = getApplicationContext().getSharedPreferences("TechMonster_Login", 0);
+        token = pref.getString("user_token", "");
+
 
         dbActions = new DBActions(getApplicationContext());
 
@@ -105,10 +126,12 @@ public class JobDetailsActivity extends AppCompatActivity {
         keywordL =(LinearLayout)findViewById(R.id.tags);
         descTextL =(LinearLayout)findViewById(R.id.desc_text_area);
         reqTextL =(LinearLayout)findViewById(R.id.req_text_area);
+
+        fbl = (FlexboxLayout) findViewById(R.id.flexbox_layout);
     }
 
     void updateData(){
-        JobDetailsList jobDet =AppData.jobDetailsLists.get(0);
+        final JobDetailsList jobDet =AppData.jobDetailsLists.get(0);
 
         jobTitle.setText(jobDet.getName());
         jobCompany.setText(jobDet.getCompany_info().getCom_name());
@@ -117,16 +140,23 @@ public class JobDetailsActivity extends AppCompatActivity {
         jobExpire.setText(jobDet.getExpire_time());
 
         for (int j = 0; j < jobDet.getKeywords().length; j++) {
-
             RelativeLayout tr_head = (RelativeLayout) getLayoutInflater().inflate(R.layout.tag_lay, null);
 
             TextView label_date = (TextView) tr_head.findViewById(R.id.tag_name);
-            label_date.setText(jobDet.getKeywords()[j]);
+            label_date.setText(jobDet.getKeywords()[j].toUpperCase());
 
-            keywordL.addView(tr_head, new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.WRAP_CONTENT,
-                    RelativeLayout.LayoutParams.WRAP_CONTENT));
+            final String sss =jobDet.getKeywords()[j];
+            fbl.addView(tr_head);
 
+            tr_head.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //Toast.makeText(JobDetailsActivity.this, sss,Toast.LENGTH_LONG ).show();
+                    getSearchWeb("&token="+token+"&keywords="+sss,true);
+
+                }
+            });
         }
 
         for (int j = 0; j < jobDet.getJob_skill().length; j++) {
@@ -137,6 +167,8 @@ public class JobDetailsActivity extends AppCompatActivity {
             label_date.setText(jobDet.getJob_skill()[j]);
 
             descTextL.addView(tr_head);
+
+
 
         }
 
@@ -229,6 +261,78 @@ public class JobDetailsActivity extends AppCompatActivity {
 
             isFavourited = true;
         }
+    }
+
+
+
+    public void getSearchWeb(final String data, final boolean showProgress) {
+
+        if (XInternetServices.isNetworkAvailable(JobDetailsActivity.this)) {
+            class  LoadHomeData extends AsyncTask<Void,Void,Void> {
+                ProgressDialog progressDialog;
+
+                @Override
+                protected Void doInBackground(Void... params) {
+                    try {
+                        result = new JSONParser().thePostRequest(
+                                AppUrl.searchJob+data, "");
+                        System.out.println("WWWWWW >>>"+AppData.searchJobList.size());
+                        AppData.searchJobList= new JSON().parseHomeNews(result );
+
+                        System.out.println("WWWWWW >>>"+AppData.searchJobList.size());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    return null;
+                }
+
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+
+                    if (showProgress == true) {
+                        progressDialog = ProgressDialog.show(JobDetailsActivity.this, "",
+                                "Loading. Please Wait...");
+                        progressDialog.setCancelable(false);
+                    }
+                }
+
+                @Override
+                protected void onPostExecute(Void aVoid) {
+                    if (showProgress == true) {
+                        progressDialog.dismiss();
+                    }
+
+                    // startActivity(new );
+                    startActivity(new Intent(JobDetailsActivity.this, SearchResultActivity.class));
+
+                    super.onPostExecute(aVoid);
+                }
+            }
+            new LoadHomeData().execute();
+        } else {
+            android.support.v7.app.AlertDialog.Builder builder1;
+            builder1 = new android.support.v7.app.AlertDialog.Builder(JobDetailsActivity.this);
+            builder1.setMessage("Please check your internet connection");
+            builder1.setCancelable(true);
+            builder1.setPositiveButton("Yes",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            builder1.setNegativeButton("No",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            ((Activity) JobDetailsActivity.this).finish();
+                        }
+                    });
+            android.support.v7.app.AlertDialog alert11 = builder1.create();
+            alert11.show();
+
+        }
+
     }
 }
 
