@@ -13,6 +13,8 @@ import com.bitmakers.techmonster.adapter_pkg.HomePageAdapter;
 
 public class AppliedJobActivity extends AppCompatActivity {
 
+    //ee
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
